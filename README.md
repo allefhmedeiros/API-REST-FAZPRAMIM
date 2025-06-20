@@ -15,7 +15,7 @@ O projeto oferece uma estrutura CRUD completa para gerenciar usuários, prestado
 - Promover o NPS dos prestadores de serviço;
 
 ## 🛠️ TECNOLOGIA EMPREGADAS
-- Java 17
+- Java 19
 - Spring Boot
 - Maven
 - JPA / Hibernate
