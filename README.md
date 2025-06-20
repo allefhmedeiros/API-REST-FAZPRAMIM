@@ -23,7 +23,7 @@ O projeto oferece uma estrutura CRUD completa para gerenciar usuários, prestado
 
 ## 🧠 MODELAGEM DE REGRA DE NEGÓCIO
 
-![img.png](img.png)
+![img_1.png](img_1.png)
 
 ## 🚨 STATUS DO PROJETO: EM DESENVOLVIMENTO
 
