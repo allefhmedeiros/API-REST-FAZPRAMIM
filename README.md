@@ -17,10 +17,13 @@ O projeto oferece uma estrutura CRUD completa para gerenciar usuários, prestado
 ## 🛠️ TECNOLOGIA EMPREGADAS
 - Java 19
 - Spring Boot
+- Sprong Data JPA
+- Bean Validation
 - Maven
 - JPA / Hibernate
 - Banco de Dados Relacional MySQL
 - Insomnia
+- Flyway
 
 ## 🧠 MODELAGEM DE REGRA DE NEGÓCIO
 
