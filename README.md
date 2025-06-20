@@ -18,7 +18,7 @@ O projeto oferece uma estrutura CRUD completa para gerenciar usuários, prestado
 - Java 19
 - Spring Boot
 - Sprong Data JPA
-- Bean Validation
+- Validation
 - Maven
 - JPA / Hibernate
 - Banco de Dados Relacional MySQL
@@ -33,4 +33,5 @@ O projeto oferece uma estrutura CRUD completa para gerenciar usuários, prestado
 
 - ✅ Planejamento de Escopo: Concluído!
 - ✅ Modelagem de entidades do negócio: Concluído!
+- ✅ Configuração de Conexão do Banco de Dados: Concluído!
 - ⏳ Implementação de Usuarios: Em andamento!
