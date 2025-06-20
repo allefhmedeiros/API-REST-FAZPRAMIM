@@ -1,22 +1,19 @@
 package com.fazpramim.api.entities;
 
+import com.fazpramim.api.dto.dtoEndereco;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
-@Table(name = "tbl_enderecos")
-@Entity(name = "Endereco")
+import java.time.LocalDateTime;
+
+@Embeddable
 @Getter
-@NoArgsConstructor
+@Setter
+@NoArgsConstructor(access = AccessLevel.PUBLIC)
 @AllArgsConstructor
-@EqualsAndHashCode(of = "id")
 
 public class Endereco {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+
     private String rua;
     private String numero;
     private String complemento;
@@ -24,6 +21,16 @@ public class Endereco {
     private String bairro;
     private String cidade;
     private String estado;
-    private String dataCadastro;
-    private boolean status;
+
+    public Endereco(dtoEndereco dados) {
+        this.rua = dados.rua();
+        this.numero = dados.numero();
+        this.complemento = dados.complemento();
+        this.cep = dados.cep();
+        this.bairro = dados.bairro();
+        this.cidade = dados.cidade();
+        this.estado = dados.estado();
+    }
+
+    public Endereco(){}
 }

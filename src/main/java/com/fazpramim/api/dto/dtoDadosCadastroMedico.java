@@ -1,13 +1,16 @@
 package com.fazpramim.api.dto;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+
 public record dtoDadosCadastroMedico (
         String nome,
         String telefone,
-        String dataNascimento,
+        LocalDate dataNascimento,
         String email,
         String senha,
         String foto,
-        String dataCadastro,
+        LocalDateTime dataCadastro,
         String documento,
         boolean status,
         dtoSexo sexo,

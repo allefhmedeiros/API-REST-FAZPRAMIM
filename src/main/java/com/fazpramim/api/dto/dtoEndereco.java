@@ -1,5 +1,7 @@
 package com.fazpramim.api.dto;
 
+import java.time.LocalDateTime;
+
 public record dtoEndereco (
         String rua,
         String numero,
@@ -7,9 +9,7 @@ public record dtoEndereco (
         String cep,
         String bairro,
         String cidade,
-        String estado,
-        String dataCadastro,
-        boolean status
+        String estado
 
 ){
 }
