@@ -28,6 +28,6 @@ O projeto oferece uma estrutura CRUD completa para gerenciar usuários, prestado
 
 ## 🚨 STATUS DO PROJETO: EM DESENVOLVIMENTO
 
-- ✅ Planejamento de Scopo: Concluído!
+- ✅ Planejamento de Escopo: Concluído!
 - ✅ Modelagem de entidades do negócio: Concluído!
 - ⏳ Implementação de Usuarios: Em andamento!
