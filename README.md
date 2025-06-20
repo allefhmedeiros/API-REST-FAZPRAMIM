@@ -20,6 +20,7 @@ O projeto oferece uma estrutura CRUD completa para gerenciar usuários, prestado
 - Maven
 - JPA / Hibernate
 - Banco de Dados Relacional MySQL
+- Insomnia
 
 ## 🧠 MODELAGEM DE REGRA DE NEGÓCIO
 
@@ -29,4 +30,4 @@ O projeto oferece uma estrutura CRUD completa para gerenciar usuários, prestado
 
 - ✅ Planejamento de Scopo: Concluído!
 - ✅ Modelagem de entidades do negócio: Concluído!
-- ⏳ Implementação de Estrutura Logica: Em andamento!
+- ⏳ Implementação de Usuarios: Em andamento!
