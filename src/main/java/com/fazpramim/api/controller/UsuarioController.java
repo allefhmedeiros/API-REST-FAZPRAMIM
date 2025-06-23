@@ -5,6 +5,7 @@ import com.fazpramim.api.entities.Endereco;
 import com.fazpramim.api.entities.Usuario;
 import com.fazpramim.api.repository.UsuarioRepository;
 import jakarta.transaction.Transactional;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -20,7 +21,7 @@ public class UsuarioController {
 
     @PostMapping
     @Transactional
-    public void cadastrarUsuario(@RequestBody dtoDadosCadastroMedico dados){
+    public void cadastrarUsuario(@RequestBody @Valid dtoDadosCadastroMedico dados){
         repository.save(new Usuario(dados));
         //System.out.println(dados);
     }

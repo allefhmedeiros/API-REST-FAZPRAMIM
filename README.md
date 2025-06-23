@@ -15,15 +15,15 @@ O projeto oferece uma estrutura CRUD completa para gerenciar usuários, prestado
 - Promover o NPS dos prestadores de serviço;
 
 ## 🛠️ TECNOLOGIA EMPREGADAS
-- Java 19
-- Spring Boot
-- Sprong Data JPA
-- Validation
-- Maven
-- JPA / Hibernate
-- Banco de Dados Relacional MySQL
-- Insomnia
-- Flyway
+- **Java 19** – linguagem de programação;
+- **Spring Boot** – framework Java para desenvolvimento de aplicações;
+- **Spring Data JPA** – módulo do Spring que facilita o trabalho com bancos relacionais usando a especificação JPA;
+- **Validation** – processo que garante automaticamente que os dados recebidos atendam a regras definidas antes de serem processados ou armazenados;
+- **Maven** – ferramenta de automação e gerenciamento de projetos Java que simplifica compilação, dependências e deploy;
+- **JPA / Hibernate** – implementação da especificação JPA para mapeamento objeto-relacional;
+- **MySQL** – banco de dados relacional;
+- **Insomnia** – ferramenta para testes de integração e comunicação da API;
+- **Flyway** – ferramenta para gerenciar e versionar mudanças no banco de dados.
 
 ## 🧠 MODELAGEM DE REGRA DE NEGÓCIO
 
