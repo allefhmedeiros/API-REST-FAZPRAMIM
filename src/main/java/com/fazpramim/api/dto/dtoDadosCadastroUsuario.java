@@ -6,7 +6,7 @@ import jakarta.validation.constraints.*;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
-public record dtoDadosCadastroMedico (
+public record dtoDadosCadastroUsuario(
         @NotBlank(message = "O nome é obrigatório para cadastro de usuários")
         String nome,
         @Pattern(regexp = "^(\\(?\\d{2}\\)?\\s?)?(9\\d{4}|[2-9]\\d{3})-?\\d{4}$", message = "Telefone inválido. Use o formato (99) 99999-9999 ou (99) 9999-9999")
