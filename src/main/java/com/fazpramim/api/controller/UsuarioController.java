@@ -1,5 +1,6 @@
 package com.fazpramim.api.controller;
 
+import com.fazpramim.api.dto.dtoDadosAtualizacaoUsuario;
 import com.fazpramim.api.dto.dtoDadosCadastroUsuario;
 import com.fazpramim.api.dto.dtoDadosListagemUsuario;
 import com.fazpramim.api.entities.Usuario;
@@ -40,6 +41,13 @@ public class UsuarioController {
     @GetMapping
     public Page<dtoDadosListagemUsuario> listarUsuarios(@PageableDefault(size=10, sort = {"nome"}) Pageable paginarDevolucao){
         return repository.findAll(paginarDevolucao).map(dtoDadosListagemUsuario::new);
+    }
+
+    @PutMapping
+    @Transactional
+    public void atualizarUsuario(@RequestBody @Valid dtoDadosAtualizacaoUsuario dados){
+        var usuario = repository.getReferenceById(dados.id());
+        usuario.atualizarInformacoes(dados);
     }
 
 }

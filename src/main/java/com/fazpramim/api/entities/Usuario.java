@@ -1,5 +1,6 @@
 package com.fazpramim.api.entities;
 
+import com.fazpramim.api.dto.dtoDadosAtualizacaoUsuario;
 import com.fazpramim.api.dto.dtoDadosCadastroUsuario;
 import com.fazpramim.api.dto.dtoSexo;
 import jakarta.persistence.*;
@@ -147,5 +148,18 @@ public class Usuario {
     }
 
     public Usuario() {
+    }
+
+    public void atualizarInformacoes(dtoDadosAtualizacaoUsuario dados) {
+        if(dados.nome()!= null){
+            this.nome = dados.nome();
+        }
+        if(dados.telefone()!= null){
+            this.telefone = dados.telefone();
+        }
+        if(dados.documento()!= null){
+            this.documento = dados.documento();
+        }
+
     }
 }

@@ -10,6 +10,8 @@ import java.time.LocalDateTime;
 
 public record dtoDadosListagemUsuario(
 
+        Long id,
+
         String nome,
 
         String telefone,
@@ -26,7 +28,7 @@ public record dtoDadosListagemUsuario(
 
 ) {
     public dtoDadosListagemUsuario(Usuario usuario){
-        this(usuario.getNome(), usuario.getTelefone(), usuario.getDataNascimento(),usuario.getEmail(), usuario.getFoto(), usuario.getDocumento(), usuario.getSexo(), usuario.getEndereco());
+        this(usuario.getId(), usuario.getNome(), usuario.getTelefone(), usuario.getDataNascimento(),usuario.getEmail(), usuario.getFoto(), usuario.getDocumento(), usuario.getSexo(), usuario.getEndereco());
     }
 
 
