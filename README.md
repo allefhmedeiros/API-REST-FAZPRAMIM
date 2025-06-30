@@ -36,4 +36,5 @@ O projeto oferece uma estrutura CRUD completa para gerenciar usuários, prestado
 - ✅ Configuração de Conexão do Banco de Dados: Concluído!
 - ✅ Implementação de Cadastros de Usuarios via POST: Concluído!
 - ✅ Implementação de Consultas de Usuarios via GET: Concluído!
-- ⏳ Implementação de atualização de Usuarios via PUT: Em andamento!
+- ✅ Implementação de Atualização de Usuarios via PUT: Concluído!
+- ✅ Implementação de Exclusão de Lógica Usuarios via DELETE: Concluído!

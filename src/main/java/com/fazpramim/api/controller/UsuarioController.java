@@ -40,7 +40,7 @@ public class UsuarioController {
 
     @GetMapping
     public Page<dtoDadosListagemUsuario> listarUsuarios(@PageableDefault(size=10, sort = {"nome"}) Pageable paginarDevolucao){
-        return repository.findAll(paginarDevolucao).map(dtoDadosListagemUsuario::new);
+        return repository.findAllByStatusTrue(paginarDevolucao).map(dtoDadosListagemUsuario::new);
     }
 
     @PutMapping
@@ -48,6 +48,13 @@ public class UsuarioController {
     public void atualizarUsuario(@RequestBody @Valid dtoDadosAtualizacaoUsuario dados){
         var usuario = repository.getReferenceById(dados.id());
         usuario.atualizarInformacoes(dados);
+    }
+
+    @DeleteMapping("/{id}")
+    @Transactional
+    public void excluirUsuario(@PathVariable Long id){
+        var usuario = repository.getReferenceById(id);
+        usuario.inativarUsuario();
     }
 
 }

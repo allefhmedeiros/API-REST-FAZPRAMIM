@@ -162,4 +162,8 @@ public class Usuario {
         }
 
     }
+
+    public void inativarUsuario() {
+        this.status = false;
+    }
 }
