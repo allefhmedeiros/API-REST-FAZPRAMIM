@@ -5,7 +5,7 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
 
-public record DTOCadastroFornecedor(
+public record DTOPrestadorCadastro(
         @NotBlank(message = "O nome é obrigatório.")
         @Pattern(
                 regexp = "^[A-ZÀ-Úa-zà-ú]+(\\s+[A-ZÀ-Úa-zà-ú]+)+$",

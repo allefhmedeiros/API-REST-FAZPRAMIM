@@ -1,6 +1,6 @@
 package com.fazpramim.api.entities;
 
-import com.fazpramim.api.dto.DTOCadastroFornecedor;
+import com.fazpramim.api.dto.DTOPrestadorCadastro;
 import jakarta.persistence.*;
 
 import java.util.Objects;
@@ -21,7 +21,7 @@ public class Prestador {
     public Prestador() {
     }
 
-    public Prestador(DTOCadastroFornecedor dados) {
+    public Prestador(DTOPrestadorCadastro dados) {
         this.nome = dados.nome();
         this.documento = dados.documento();
         this.status = dados.status();
