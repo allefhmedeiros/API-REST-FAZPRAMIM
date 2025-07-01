@@ -25,16 +25,16 @@ O projeto oferece uma estrutura CRUD completa para gerenciar usuários, prestado
 - **Insomnia** – ferramenta para testes de integração e comunicação da API;
 - **Flyway** – ferramenta para gerenciar e versionar mudanças no banco de dados.
 
-## 🧠 MODELAGEM DE REGRA DE NEGÓCIO
+## 🧠 MODELAGEM DE DOMÍNIO - REGRA DE NEGÓCIO
 
-![img_3.png](img_3.png)
+![img_2.png](img_2.png)
 
 ## 🚨 STATUS DO PROJETO: EM DESENVOLVIMENTO
 
 - ✅ Planejamento de Escopo: Concluído!
 - ✅ Modelagem de entidades do negócio: Concluído!
-- ✅ Configuração de Conexão do Banco de Dados: Concluído!
-- ✅ Implementação de Cadastros de Usuarios via POST: Concluído!
-- ✅ Implementação de Consultas de Usuarios via GET: Concluído!
-- ✅ Implementação de Atualização de Usuarios via PUT: Concluído!
-- ✅ Implementação de Exclusão de Lógica Usuarios via DELETE: Concluído!
+- 🚨 Configuração de Conexão do Banco de Dados: Em desenvolvimento!
+- 🚨 Implementação de Cadastros de Usuarios via POST: Em desenvolvimento!
+- 🚨 Implementação de Consultas de Usuarios via GET: Em desenvolvimento!
+- 🚨 Implementação de Atualização de Usuarios via PUT: Em desenvolvimento!
+- 🚨 Implementação de Exclusão de Lógica Usuarios via DELETE: Em desenvolvimento!
