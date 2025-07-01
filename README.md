@@ -29,6 +29,10 @@ O projeto oferece uma estrutura CRUD completa para gerenciar usuários, prestado
 
 ![img_2.png](img_2.png)
 
+## 🛢️ BANCO DE DADOS - MODELO RELACIONAL
+
+![img.png](img.png)
+
 ## 🚨 STATUS DO PROJETO: EM DESENVOLVIMENTO
 
 - ✅ Planejamento de Escopo: Concluído!
