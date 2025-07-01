@@ -37,8 +37,5 @@ O projeto oferece uma estrutura CRUD completa para gerenciar usuários, prestado
 
 - ✅ Planejamento de Escopo: Concluído!
 - ✅ Modelagem de entidades do negócio: Concluído!
-- 🚨 Configuração de Conexão do Banco de Dados: Em desenvolvimento!
-- 🚨 Implementação de Cadastros de Usuarios via POST: Em desenvolvimento!
-- 🚨 Implementação de Consultas de Usuarios via GET: Em desenvolvimento!
-- 🚨 Implementação de Atualização de Usuarios via PUT: Em desenvolvimento!
-- 🚨 Implementação de Exclusão de Lógica Usuarios via DELETE: Em desenvolvimento!
+- ✅ Configuração de Conexão do Banco de Dados: Em desenvolvimento!
+- 🚨 Implementação de GRUD de Prestadores: Em desenvolvimento!

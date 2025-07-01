@@ -1,9 +1,16 @@
 package com.fazpramim.api.entities;
 
+import com.fazpramim.api.dto.DTOCadastroFornecedor;
+import jakarta.persistence.*;
+
 import java.util.Objects;
 
+@Table(name="tbl_prestador")
+@Entity(name="Prestador")
 public class Prestador {
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     private String nome;
     private String documento;
     private boolean status;
@@ -12,6 +19,15 @@ public class Prestador {
     private String apresentacao;
 
     public Prestador() {
+    }
+
+    public Prestador(DTOCadastroFornecedor dados) {
+        this.nome = dados.nome();
+        this.documento = dados.documento();
+        this.status = dados.status();
+        this.email = dados.email();
+        this.senha = dados.senha();
+        this.apresentacao = dados.apresentacao();
     }
 
     @Override
