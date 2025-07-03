@@ -1,5 +1,6 @@
 package com.fazpramim.api.entities;
 
+import com.fazpramim.api.dto.DTOPrestadorAtualizacao;
 import com.fazpramim.api.dto.DTOPrestadorCadastro;
 import jakarta.persistence.*;
 
@@ -97,5 +98,17 @@ public class Prestador {
 
     public void setApresentacao(String apresentacao) {
         this.apresentacao = apresentacao;
+    }
+
+    public void atualizarInformacoes(DTOPrestadorAtualizacao dados) {
+        if(dados.nome() != null){
+            this.nome = dados.nome();
+        }
+        if(dados.documento() != null){
+            this.documento = dados.documento();
+        }
+        if(dados.apresentacao() != null){
+            this.apresentacao = dados.apresentacao();
+        }
     }
 }

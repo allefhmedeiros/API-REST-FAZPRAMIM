@@ -1,9 +1,11 @@
 package com.fazpramim.api.controller;
 
+import com.fazpramim.api.dto.DTOPrestadorAtualizacao;
 import com.fazpramim.api.dto.DTOPrestadorCadastro;
 import com.fazpramim.api.dto.DTOPrestadorListagem;
 import com.fazpramim.api.entities.Prestador;
 import com.fazpramim.api.repository.PrestadorRepository;
+import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -34,6 +36,13 @@ public class PrestadorController {
     @GetMapping
     public Page<DTOPrestadorListagem> listarPrestador(@PageableDefault(size = 5, page = 0, sort = {"nome"}) Pageable paginacao){
         return repository.findAll(paginacao).map(DTOPrestadorListagem::new);
+    }
+
+    @PutMapping
+    @Transactional
+    public void atualizarPrestador(@RequestBody @Valid DTOPrestadorAtualizacao dados){
+        var medico = repository.getReferenceById(dados.id());
+        medico.atualizarInformacoes(dados);
     }
 
 }
