@@ -37,5 +37,5 @@ O projeto oferece uma estrutura CRUD completa para gerenciar usuários, prestado
 
 - ✅ Planejamento de Escopo: Concluído!
 - ✅ Modelagem de entidades do negócio: Concluído!
-- ✅ Configuração de Conexão do Banco de Dados: Em desenvolvimento!
+- ✅ Configuração de Conexão do Banco de Dados: Concluído!
 - 🚨 Implementação de GRUD de Prestadores: Em desenvolvimento!

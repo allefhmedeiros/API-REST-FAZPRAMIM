@@ -6,6 +6,9 @@ import com.fazpramim.api.entities.Prestador;
 import com.fazpramim.api.repository.PrestadorRepository;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -22,9 +25,15 @@ public class PrestadorController {
         repository.save(new Prestador(dados));
     }
 
+    //Rota --> http://localhost:8080/prestadores?size=5&page=0&sort=nome
+    //size --> determina qtd de registros na page.
+    //page --> determina a page começando por 0.
+    //sort --> determina o campo usado para a classificação dos registros na page.
+    //Configuração de paginação básica: @PageableDefault(size = 5, page = 0, sort = {"nome"})
+
     @GetMapping
-    public List<DTOPrestadorListagem> listarPrestador(){
-        return repository.findAll().stream().map(DTOPrestadorListagem::new).toList();
+    public Page<DTOPrestadorListagem> listarPrestador(@PageableDefault(size = 5, page = 0, sort = {"nome"}) Pageable paginacao){
+        return repository.findAll(paginacao).map(DTOPrestadorListagem::new);
     }
 
 }
