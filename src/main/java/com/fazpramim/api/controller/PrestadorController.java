@@ -35,14 +35,21 @@ public class PrestadorController {
 
     @GetMapping
     public Page<DTOPrestadorListagem> listarPrestador(@PageableDefault(size = 5, page = 0, sort = {"nome"}) Pageable paginacao){
-        return repository.findAll(paginacao).map(DTOPrestadorListagem::new);
+        return repository.findAllByStatusTrue(paginacao).map(DTOPrestadorListagem::new);
     }
 
     @PutMapping
     @Transactional
     public void atualizarPrestador(@RequestBody @Valid DTOPrestadorAtualizacao dados){
-        var medico = repository.getReferenceById(dados.id());
-        medico.atualizarInformacoes(dados);
+        var prestador = repository.getReferenceById(dados.id());
+        prestador.atualizarInformacoes(dados);
+    }
+
+    @DeleteMapping("/{id}")
+    @Transactional
+    public void excluirPrestador(@PathVariable Long id){
+        var prestador = repository.getReferenceById(id);
+        prestador.excluirPrestador();
     }
 
 }

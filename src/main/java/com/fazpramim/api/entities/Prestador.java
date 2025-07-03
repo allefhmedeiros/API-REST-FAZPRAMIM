@@ -111,4 +111,8 @@ public class Prestador {
             this.apresentacao = dados.apresentacao();
         }
     }
+
+    public void excluirPrestador() {
+        this.status = false;
+    }
 }
