@@ -34,7 +34,7 @@ public class PrestadorController {
     //Configuração de paginação básica: @PageableDefault(size = 5, page = 0, sort = {"nome"})
 
     @GetMapping
-    public Page<DTOPrestadorListagem> listarPrestador(@PageableDefault(size = 5, page = 0, sort = {"nome"}) Pageable paginacao){
+    public Page<DTOPrestadorListagem> listarPrestador(@PageableDefault(size = 10, page = 0, sort = {"nome"}) Pageable paginacao){
         return repository.findAllByStatusTrue(paginacao).map(DTOPrestadorListagem::new);
     }
 

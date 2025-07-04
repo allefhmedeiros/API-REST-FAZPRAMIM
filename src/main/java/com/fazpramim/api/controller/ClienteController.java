@@ -25,7 +25,7 @@ public class ClienteController {
     }
 
     @GetMapping
-    public Page<DTOClienteListagem> listarCliente(@PageableDefault(size = 5, page = 0, sort = {"nome"}) Pageable paginacao){
+    public Page<DTOClienteListagem> listarCliente(@PageableDefault(size = 10, page = 0, sort = {"nome"}) Pageable paginacao){
         return repository.findAllByStatusTrue(paginacao).map(DTOClienteListagem::new);
     }
 
