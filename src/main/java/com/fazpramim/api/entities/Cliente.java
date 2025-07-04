@@ -124,4 +124,8 @@ public class Cliente {
             this.data_nascimento = dados.data_nascimento();
         }
     }
+
+    public void excluirCliente() {
+        this.status = false;
+    }
 }

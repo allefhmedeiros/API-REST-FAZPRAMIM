@@ -35,4 +35,11 @@ public class ClienteController {
         cliente.atualizarInformacoes(dados);
     }
 
+    @DeleteMapping("/{id}")
+    @Transactional
+    public void excluirCliente(@PathVariable Long id){
+        var cliente = repository.getReferenceById(id);
+        cliente.excluirCliente();
+    }
+
 }
