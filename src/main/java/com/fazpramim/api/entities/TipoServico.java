@@ -1,12 +1,22 @@
 package com.fazpramim.api.entities;
 
-import java.util.Objects;
+import com.fazpramim.api.dto.DTOTipoServicoCadastro;
+import jakarta.persistence.*;
 
+import java.util.Objects;
+@Table(name="tbl_TIPO_SERVICO")
+@Entity(name="TipoServico")
 public class TipoServico {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nome;
 
     public TipoServico() {
+    }
+
+    public TipoServico(DTOTipoServicoCadastro dados) {
+        this.nome = dados.nome();
     }
 
     @Override
