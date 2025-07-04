@@ -1,11 +1,18 @@
 package com.fazpramim.api.entities;
 
+import com.fazpramim.api.dto.DTOClienteCadastro;
+import jakarta.persistence.*;
+
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
+@Table(name="tbl_cliente")
+@Entity(name="Cliente")
 public class Cliente {
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nome;
     private String email;
@@ -13,9 +20,20 @@ public class Cliente {
     private LocalDateTime data_cadastro;
     private String senha;
     private boolean status;
-    List<Endereco> enderecos;
+    @OneToMany(mappedBy = "cliente", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Endereco> enderecos = new ArrayList<>();
 
     public Cliente() {
+    }
+
+    public Cliente(DTOClienteCadastro dados) {
+        LocalDateTime dataAtual = LocalDateTime.now();
+        this.nome = dados.nome();
+        this.status = true;
+        this.email = dados.email();
+        this.senha = dados.senha();
+        this.data_nascimento = dados.data_nascimento();
+        this.data_cadastro = dataAtual;
     }
 
     @Override

@@ -1,13 +1,20 @@
 package com.fazpramim.api.entities;
 
-import java.util.Objects;
+import jakarta.persistence.*;
 
+import java.util.Objects;
+@Table(name="tbl_endereco")
+@Entity(name="Endereco")
 public class Endereco {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String logradouro;
     private String numero;
     private String cep;
     private boolean status;
+    @ManyToOne
+    @JoinColumn(name = "tbl_cliente_id")
     private Cliente cliente;
 
     public Endereco() {
