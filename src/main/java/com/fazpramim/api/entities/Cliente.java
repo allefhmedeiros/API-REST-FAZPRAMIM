@@ -1,5 +1,6 @@
 package com.fazpramim.api.entities;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.fazpramim.api.dto.DTOClienteAtualizacao;
 import com.fazpramim.api.dto.DTOClienteCadastro;
 import jakarta.persistence.*;
@@ -22,6 +23,7 @@ public class Cliente {
     private String senha;
     private boolean status;
     @OneToMany(mappedBy = "cliente", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonManagedReference
     private List<Endereco> enderecos = new ArrayList<>();
 
     public Cliente() {

@@ -1,5 +1,7 @@
 package com.fazpramim.api.entities;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fazpramim.api.dto.DTOEnderecoCadastro;
 import jakarta.persistence.*;
 
 import java.util.Objects;
@@ -15,9 +17,18 @@ public class Endereco {
     private boolean status;
     @ManyToOne
     @JoinColumn(name = "tbl_cliente_id")
+    @JsonBackReference
     private Cliente cliente;
 
     public Endereco() {
+    }
+
+    public Endereco(DTOEnderecoCadastro dados, Cliente cliente) {
+        this.logradouro = dados.logradouro();
+        this.numero = dados.numero();
+        this.cep = dados.cep();
+        this.status = true;
+        this.cliente = cliente;
     }
 
     @Override
