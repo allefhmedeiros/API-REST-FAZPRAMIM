@@ -2,7 +2,6 @@ package com.fazpramim.api.dto;
 
 import com.fazpramim.api.entities.Cliente;
 import com.fazpramim.api.entities.Endereco;
-import com.fazpramim.api.entities.Prestador;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;

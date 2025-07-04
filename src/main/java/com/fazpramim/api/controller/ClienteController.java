@@ -1,12 +1,9 @@
 package com.fazpramim.api.controller;
 
-import com.fazpramim.api.dto.DTOClienteCadastro;
-import com.fazpramim.api.dto.DTOClienteListagem;
-import com.fazpramim.api.dto.DTOPrestadorCadastro;
-import com.fazpramim.api.dto.DTOPrestadorListagem;
+import com.fazpramim.api.dto.*;
 import com.fazpramim.api.entities.Cliente;
-import com.fazpramim.api.entities.Prestador;
 import com.fazpramim.api.repository.ClienteRepository;
+import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -29,6 +26,13 @@ public class ClienteController {
     @GetMapping
     public Page<DTOClienteListagem> listarCliente(@PageableDefault(size = 5, page = 0, sort = {"nome"}) Pageable paginacao){
         return repository.findAllByStatusTrue(paginacao).map(DTOClienteListagem::new);
+    }
+
+    @PutMapping
+    @Transactional
+    public void atualizarCliente(@RequestBody @Valid DTOClienteAtualizacao dados){
+        var cliente = repository.getReferenceById(dados.id());
+        cliente.atualizarInformacoes(dados);
     }
 
 }

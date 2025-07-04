@@ -1,5 +1,6 @@
 package com.fazpramim.api.entities;
 
+import com.fazpramim.api.dto.DTOClienteAtualizacao;
 import com.fazpramim.api.dto.DTOClienteCadastro;
 import jakarta.persistence.*;
 
@@ -35,6 +36,8 @@ public class Cliente {
         this.data_nascimento = dados.data_nascimento();
         this.data_cadastro = dataAtual;
     }
+
+
 
     @Override
     public boolean equals(Object o) {
@@ -111,5 +114,14 @@ public class Cliente {
 
     public void setEnderecos(List<Endereco> enderecos) {
         this.enderecos = enderecos;
+    }
+
+    public void atualizarInformacoes(DTOClienteAtualizacao dados) {
+        if(dados.nome() != null){
+            this.nome = dados.nome();
+        }
+        if(dados.data_nascimento() != null){
+            this.data_nascimento = dados.data_nascimento();
+        }
     }
 }
