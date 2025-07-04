@@ -20,7 +20,6 @@ public class ClienteController {
 
     @PostMapping
     public void cadastrarCliente(@RequestBody @Valid DTOClienteCadastro dados){
-
         repository.save(new Cliente(dados));
     }
 

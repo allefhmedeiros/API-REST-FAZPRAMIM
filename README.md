@@ -41,4 +41,5 @@ O projeto oferece uma estrutura CRUD completa para gerenciar usuários, prestado
 - ✅ Implementação de GRUD de Prestadores: Concluído!
 - ✅ Implementação de GRUD de Clientes: Concluído!
 - ✅ Implementação de GRUD de Endereços: Concluído!
-- 🚨 Implementação de GRUD de Catálogo: Em desenvolvimento!
+- ✅ Implementação de GRUD de Catálogo: Concluído!
+- 🚨 Implementação de GRUD de OrdemServiço: Em desenvolvimento!
