@@ -6,6 +6,7 @@ import com.fazpramim.api.dto.DTOEnderecoListagem;
 import com.fazpramim.api.entities.Endereco;
 import com.fazpramim.api.repository.ClienteRepository;
 import com.fazpramim.api.repository.EnderecoRepository;
+import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -32,6 +33,13 @@ public class EnderecoController {
     @GetMapping
     public Page<DTOEnderecoListagem> listarEnderecos(@PageableDefault(size = 10, page = 0) Pageable paginacao){
         return repository.findAllByStatusTrue(paginacao).map(DTOEnderecoListagem::new);
+    }
+
+    @DeleteMapping("/{id}")
+    @Transactional
+    public void excluirEndereco(@PathVariable Long id){
+        var endereco = repository.getReferenceById(id);
+        endereco.excluirEndereco();
     }
 
 }

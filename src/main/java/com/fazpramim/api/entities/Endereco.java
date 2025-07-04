@@ -91,4 +91,8 @@ public class Endereco {
     public void setCliente(Cliente cliente) {
         this.cliente = cliente;
     }
+
+    public void excluirEndereco() {
+        this.status = false;
+    }
 }
