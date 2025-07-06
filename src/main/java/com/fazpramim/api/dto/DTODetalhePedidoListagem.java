@@ -1,12 +1,7 @@
 package com.fazpramim.api.dto;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fazpramim.api.entities.Catalogo;
 import com.fazpramim.api.entities.DetalheServico;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
 
-import java.util.List;
 
 public record DTODetalhePedidoListagem(
         Long id,

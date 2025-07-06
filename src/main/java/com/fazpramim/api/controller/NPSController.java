@@ -1,6 +1,5 @@
 package com.fazpramim.api.controller;
 
-import com.fazpramim.api.dto.DTOEnderecoListagem;
 import com.fazpramim.api.dto.DTONpsCadastro;
 import com.fazpramim.api.dto.DTONpsListagem;
 import com.fazpramim.api.entities.Nps;

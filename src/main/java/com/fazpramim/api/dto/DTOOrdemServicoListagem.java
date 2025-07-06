@@ -1,8 +1,6 @@
 package com.fazpramim.api.dto;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fazpramim.api.entities.*;
-import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
 import java.util.List;

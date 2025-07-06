@@ -1,8 +1,6 @@
 package com.fazpramim.api.dto;
 
 import com.fazpramim.api.entities.Nps;
-import com.fazpramim.api.entities.OrdemServico;
-import com.fazpramim.api.entities.Prestador;
 
 import java.time.LocalDateTime;
 

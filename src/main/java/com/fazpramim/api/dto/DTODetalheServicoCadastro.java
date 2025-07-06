@@ -1,7 +1,5 @@
 package com.fazpramim.api.dto;
 
-import com.fazpramim.api.entities.Catalogo;
-import com.fazpramim.api.entities.OrdemServico;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotNull;
 

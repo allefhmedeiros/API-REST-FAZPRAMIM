@@ -1,18 +1,13 @@
 package com.fazpramim.api.controller;
 
 import com.fazpramim.api.dto.DTODetalheServicoCadastro;
-import com.fazpramim.api.dto.DTOOrdemServicoCadastro;
-import com.fazpramim.api.dto.DTOOrdemServicoListagem;
 import com.fazpramim.api.entities.DetalheServico;
-import com.fazpramim.api.entities.OrdemServico;
 import com.fazpramim.api.repository.CatalogoRepository;
 import com.fazpramim.api.repository.DetalheServicoRepository;
 import com.fazpramim.api.repository.OrdemServicoRepository;
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController

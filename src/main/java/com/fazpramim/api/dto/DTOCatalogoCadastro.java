@@ -1,7 +1,5 @@
 package com.fazpramim.api.dto;
 
-import com.fazpramim.api.entities.Prestador;
-import com.fazpramim.api.entities.TipoServico;
 import jakarta.validation.constraints.DecimalMin;
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.NotNull;

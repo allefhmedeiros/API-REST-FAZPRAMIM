@@ -1,7 +1,6 @@
 package com.fazpramim.api.dto;
 
 import com.fazpramim.api.entities.Catalogo;
-import com.fazpramim.api.entities.Prestador;
 import com.fazpramim.api.entities.TipoServico;
 
 import java.time.LocalDateTime;
