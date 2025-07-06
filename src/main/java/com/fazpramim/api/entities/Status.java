@@ -1,12 +1,24 @@
 package com.fazpramim.api.entities;
 
+import com.fazpramim.api.dto.DTOStatusCadastro;
+import jakarta.persistence.*;
+
 import java.util.Objects;
 
+@Table(name="tbl_status")
+@Entity(name="Status")
+
 public class Status {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nome;
 
     public Status() {
+    }
+
+    public Status(DTOStatusCadastro dados) {
+        this.nome = dados.nome();
     }
 
     @Override

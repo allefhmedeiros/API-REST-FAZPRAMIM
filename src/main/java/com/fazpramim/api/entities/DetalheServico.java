@@ -1,15 +1,35 @@
 package com.fazpramim.api.entities;
 
-import java.util.Objects;
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fazpramim.api.dto.DTODetalheServicoCadastro;
+import jakarta.persistence.*;
 
+import java.util.Objects;
+@Table(name="tbl_detalhe_servico")
+@Entity(name="DetalheServico")
 public class DetalheServico {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private Integer qtd_horas;
     private Double sub_total;
+    @ManyToOne
+    @JoinColumn(name = "tbl_catalogo_id")
+    @JsonBackReference
     private Catalogo catalogo;
+    @ManyToOne
+    @JoinColumn(name = "tbl_ordem_servico_id")
+    @JsonBackReference
     private OrdemServico ordem_servico;
 
     public DetalheServico() {
+    }
+
+    public DetalheServico(DTODetalheServicoCadastro dados, Catalogo catalogo, OrdemServico ordemServico, Double subTotal) {
+        this.qtd_horas = dados.qtd_horas();
+        this.sub_total = subTotal;
+        this.catalogo = catalogo;
+        this.ordem_servico = ordemServico;
     }
 
     @Override
@@ -64,4 +84,5 @@ public class DetalheServico {
     public void setOrdem_servico(OrdemServico ordem_servico) {
         this.ordem_servico = ordem_servico;
     }
+
 }
