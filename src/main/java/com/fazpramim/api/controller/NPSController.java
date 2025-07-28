@@ -10,7 +10,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.util.UriComponentsBuilder;
 
 @RestController
 @RequestMapping("nps")
@@ -23,14 +25,24 @@ public class NPSController {
     private OrdemServicoRepository ordemServicoRepository;
 
     @PostMapping
-    public void cadastrarNps(@RequestBody @Valid DTONpsCadastro dados){
+    public ResponseEntity cadastrarNps(@RequestBody @Valid DTONpsCadastro dados, UriComponentsBuilder uriBuilder){
         var ordemServico = ordemServicoRepository.getReferenceById(dados.id_ordem_servico());
-        npsRepository.save(new Nps(dados, ordemServico));
+        var novoNps = new Nps(dados, ordemServico);
+        npsRepository.save(novoNps);
+        var uri = uriBuilder.path("/nps/{id}").buildAndExpand(novoNps.getId()).toUri();
+        return ResponseEntity.created(uri).body(new DTONpsListagem(novoNps));
     }
 
     @GetMapping
-    public Page<DTONpsListagem> listarNps(@PageableDefault(size = 10, page = 0) Pageable paginacao){
-        return npsRepository.findAll(paginacao).map(DTONpsListagem::new);
+    public ResponseEntity<Page<DTONpsListagem>> listarNps(@PageableDefault(size = 10, page = 0) Pageable paginacao){
+        var page =  npsRepository.findAll(paginacao).map(DTONpsListagem::new);
+        return ResponseEntity.ok(page);
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity detalharNps(@PathVariable Long id){
+        var npsDetalhado = npsRepository.getReferenceById(id);
+        return ResponseEntity.ok(new DTONpsListagem(npsDetalhado));
     }
 
 }

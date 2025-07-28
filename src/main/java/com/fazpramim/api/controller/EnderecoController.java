@@ -11,7 +11,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.util.UriComponentsBuilder;
 
 @RestController
 @RequestMapping("enderecos")
@@ -23,22 +25,32 @@ public class EnderecoController {
     private ClienteRepository repositoryCliente;
 
     @PostMapping
-    public void cadastrarEndereco(@RequestBody @Valid DTOEnderecoCadastro dados){
+    public ResponseEntity cadastrarEndereco(@RequestBody @Valid DTOEnderecoCadastro dados, UriComponentsBuilder uriBuilder){
         var cliente = repositoryCliente.getReferenceById(dados.id_cliente());
         Endereco endereco = new Endereco(dados, cliente);
         repository.save(endereco);
+        var uri = uriBuilder.path("/enderecos/{id}").buildAndExpand(endereco.getId()).toUri();
+        return ResponseEntity.created(uri).body(new DTOEnderecoListagem(endereco));
     }
 
     @GetMapping
-    public Page<DTOEnderecoListagem> listarEnderecos(@PageableDefault(size = 10, page = 0) Pageable paginacao){
-        return repository.findAllByStatusTrue(paginacao).map(DTOEnderecoListagem::new);
+    public ResponseEntity<Page<DTOEnderecoListagem>> listarEnderecos(@PageableDefault(size = 10, page = 0) Pageable paginacao){
+        var page = repository.findAllByStatusTrue(paginacao).map(DTOEnderecoListagem::new);
+        return ResponseEntity.ok(page);
     }
 
     @DeleteMapping("/{id}")
     @Transactional
-    public void excluirEndereco(@PathVariable Long id){
+    public ResponseEntity excluirEndereco(@PathVariable Long id){
         var endereco = repository.getReferenceById(id);
         endereco.excluirEndereco();
+        return ResponseEntity.noContent().build();
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity detalharEndereco(@PathVariable Long id){
+        var enderecoDetalhado = repository.getReferenceById(id);
+        return ResponseEntity.ok(new DTOEnderecoListagem(enderecoDetalhado));
     }
 
 }

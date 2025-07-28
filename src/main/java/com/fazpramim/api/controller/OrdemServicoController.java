@@ -17,6 +17,7 @@ import org.springframework.data.web.PageableDefault;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.util.UriComponentsBuilder;
 
 @RestController
 @RequestMapping("ordemservico")
@@ -35,18 +36,22 @@ public class OrdemServicoController {
     private EnderecoRepository enderecoRepository;
 
     @PostMapping
-    public ResponseEntity<DTOOrdemServicoListagem> cadastrarOrdemServico(@RequestBody @Valid DTOOrdemServicoCadastro dados){
+    public ResponseEntity<DTOOrdemServicoListagem> cadastrarOrdemServico(@RequestBody @Valid DTOOrdemServicoCadastro dados, UriComponentsBuilder uriBuilder){
         var status = statusRepository.getReferenceById(Long.valueOf("5"));
         var cliente = clienteRepository.getReferenceById(dados.id_cliente());
         var endereco = enderecoRepository.getReferenceById(dados.id_endereco());
-        var ordemServicoCriada = ordemServicoRepository.save(new OrdemServico(dados, cliente, endereco, status));
+        var novaOrdemServico = new OrdemServico(dados, cliente, endereco, status);
+        var ordemServicoCriada = ordemServicoRepository.save(novaOrdemServico);
         var ordemServicoCriadaDTO = new DTOOrdemServicoListagem(ordemServicoCriada);
-        return ResponseEntity.status(HttpStatus.CREATED).body(ordemServicoCriadaDTO);
+        var uri = uriBuilder.path("/ordemservico/{id}").buildAndExpand(novaOrdemServico.getId()).toUri();
+        //return ResponseEntity.status(HttpStatus.CREATED).body(ordemServicoCriadaDTO);
+        return ResponseEntity.created(uri).body(new DTOOrdemServicoListagem(novaOrdemServico));
     }
 
     @GetMapping
-    public Page<DTOOrdemServicoListagem> listarOrdensServico(@PageableDefault(size = 10, page = 0) Pageable paginacao){
-        return ordemServicoRepository.findAll(paginacao).map(DTOOrdemServicoListagem::new);
+    public ResponseEntity<Page<DTOOrdemServicoListagem>> listarOrdensServico(@PageableDefault(size = 10, page = 0) Pageable paginacao){
+        var page = ordemServicoRepository.findAll(paginacao).map(DTOOrdemServicoListagem::new);
+        return ResponseEntity.ok(page);
     }
 
     @PutMapping
@@ -62,6 +67,12 @@ public class OrdemServicoController {
         var ordemServicoCriadaDTO = new DTOOrdemServicoListagem(ordemServico);
         return ResponseEntity.status(HttpStatus.CREATED).body(ordemServicoCriadaDTO);
 
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity detalharOrdemServico(@PathVariable Long id){
+        var ordemServicoDetalhado = ordemServicoRepository.getReferenceById(id);
+        return ResponseEntity.ok(new DTOOrdemServicoListagem(ordemServicoDetalhado));
     }
 
 }
