@@ -24,6 +24,7 @@ O projeto oferece uma estrutura CRUD completa para gerenciar usuários, prestado
 - **MySQL** – banco de dados relacional;
 - **Insomnia** – ferramenta para testes de integração e comunicação da API;
 - **Flyway** – ferramenta para gerenciar e versionar mudanças no banco de dados.
+- **Spring Security** - implementa segurança em aplicações Java, especialmente aplicações web.
 
 ## 🧠 MODELAGEM DE DOMÍNIO - REGRA DE NEGÓCIO
 
@@ -32,6 +33,10 @@ O projeto oferece uma estrutura CRUD completa para gerenciar usuários, prestado
 ## 🛢️ BANCO DE DADOS - MODELO RELACIONAL
 
 ![img.png](img.png)
+
+## 🔐 SPRING SECURITY - AUTENTICAÇÃO E AUTORIZAÇÃO
+
+![img_1.png](img_1.png)
 
 ## 🚨 STATUS DO PROJETO: EM DESENVOLVIMENTO
 
