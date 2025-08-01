@@ -24,7 +24,8 @@ O projeto oferece uma estrutura CRUD completa para gerenciar usuários, prestado
 - **MySQL** – banco de dados relacional;
 - **Insomnia** – ferramenta para testes de integração e comunicação da API;
 - **Flyway** – ferramenta para gerenciar e versionar mudanças no banco de dados.
-- **Spring Security** - implementa segurança em aplicações Java, especialmente aplicações web.
+- **Spring Security** - Implementa segurança em aplicações Java, especialmente aplicações web.
+- **Auth0/java-jwt** - Implementação Java do JSON Web Token (JWT
 
 ## 🧠 MODELAGEM DE DOMÍNIO - REGRA DE NEGÓCIO
 
@@ -50,3 +51,6 @@ O projeto oferece uma estrutura CRUD completa para gerenciar usuários, prestado
 - ✅ Implementação de GRUD de OrdemServiço: Concluído!
 - ✅ Implementação de GRUD de DetalheServiço: Concluído!
 - ✅ Implementação de GRUD de NPS: Concluído!
+- ✅ Implementação do Spring Security para gerenciamento da API: Concluído!
+- ✅ Implementação do Auth0/java-jwt para autenticação de tokens de acesso: Concluído!
+- ✅ Implementação do controle de acesso a rotas: Concluído!
