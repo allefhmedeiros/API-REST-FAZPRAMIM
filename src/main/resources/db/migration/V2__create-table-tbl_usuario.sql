@@ -1,0 +1,5 @@
+CREATE TABLE `tbl_usuario` (
+  `id` BIGINT NOT NULL AUTO_INCREMENT,
+  `login` VARCHAR(300) NOT NULL,
+  `senha` VARCHAR(300) NOT NULL,
+  PRIMARY KEY (`id`));

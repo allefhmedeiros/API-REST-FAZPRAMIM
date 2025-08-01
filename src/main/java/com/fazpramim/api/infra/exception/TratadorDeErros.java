@@ -1,4 +1,4 @@
-package com.fazpramim.api.infra;
+package com.fazpramim.api.infra.exception;
 
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.http.ResponseEntity;
