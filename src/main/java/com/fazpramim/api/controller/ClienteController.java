@@ -3,6 +3,7 @@ package com.fazpramim.api.controller;
 import com.fazpramim.api.dto.*;
 import com.fazpramim.api.entities.Cliente;
 import com.fazpramim.api.repository.ClienteRepository;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +16,7 @@ import org.springframework.web.util.UriComponentsBuilder;
 
 @RestController
 @RequestMapping("clientes")
+@SecurityRequirement(name = "bearer-key")
 public class ClienteController {
 
     @Autowired

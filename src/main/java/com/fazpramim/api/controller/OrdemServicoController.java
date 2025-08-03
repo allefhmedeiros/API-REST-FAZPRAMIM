@@ -8,6 +8,7 @@ import com.fazpramim.api.repository.ClienteRepository;
 import com.fazpramim.api.repository.EnderecoRepository;
 import com.fazpramim.api.repository.OrdemServicoRepository;
 import com.fazpramim.api.repository.StatusRepository;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,6 +22,7 @@ import org.springframework.web.util.UriComponentsBuilder;
 
 @RestController
 @RequestMapping("ordemservico")
+@SecurityRequirement(name = "bearer-key")
 public class OrdemServicoController {
 
     @Autowired

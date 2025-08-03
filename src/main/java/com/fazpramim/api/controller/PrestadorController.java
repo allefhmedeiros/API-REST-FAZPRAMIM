@@ -5,6 +5,7 @@ import com.fazpramim.api.dto.DTOPrestadorCadastro;
 import com.fazpramim.api.dto.DTOPrestadorListagem;
 import com.fazpramim.api.entities.Prestador;
 import com.fazpramim.api.repository.PrestadorRepository;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +20,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("prestadores")
+@SecurityRequirement(name = "bearer-key")
 public class PrestadorController {
 
     @Autowired

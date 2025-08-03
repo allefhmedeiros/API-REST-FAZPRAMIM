@@ -7,6 +7,7 @@ import com.fazpramim.api.entities.Catalogo;
 import com.fazpramim.api.repository.CatalogoRepository;
 import com.fazpramim.api.repository.PrestadorRepository;
 import com.fazpramim.api.repository.TipoServicoRepository;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +20,7 @@ import org.springframework.web.util.UriComponentsBuilder;
 
 @RestController
 @RequestMapping("catalogo")
+@SecurityRequirement(name = "bearer-key")
 public class CatalogoController {
     @Autowired
     private CatalogoRepository catalogoRepository;

@@ -5,6 +5,7 @@ import com.fazpramim.api.dto.DTOEnderecoListagem;
 import com.fazpramim.api.entities.Endereco;
 import com.fazpramim.api.repository.ClienteRepository;
 import com.fazpramim.api.repository.EnderecoRepository;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,6 +18,7 @@ import org.springframework.web.util.UriComponentsBuilder;
 
 @RestController
 @RequestMapping("enderecos")
+@SecurityRequirement(name = "bearer-key")
 public class EnderecoController {
 
     @Autowired

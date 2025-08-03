@@ -5,6 +5,7 @@ import com.fazpramim.api.dto.DTOTipoServicoCadastro;
 import com.fazpramim.api.dto.DTOTipoServicoListagem;
 import com.fazpramim.api.entities.TipoServico;
 import com.fazpramim.api.repository.TipoServicoRepository;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -16,6 +17,7 @@ import org.springframework.web.util.UriComponentsBuilder;
 
 @RestController
 @RequestMapping("tiposervicos")
+@SecurityRequirement(name = "bearer-key")
 public class TipoServicoController {
 
     @Autowired

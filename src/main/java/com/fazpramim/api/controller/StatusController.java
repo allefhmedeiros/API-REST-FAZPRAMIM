@@ -5,6 +5,7 @@ import com.fazpramim.api.dto.DTOStatusCadastro;
 import com.fazpramim.api.dto.DTOStatusListagem;
 import com.fazpramim.api.entities.Status;
 import com.fazpramim.api.repository.StatusRepository;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -16,6 +17,7 @@ import org.springframework.web.util.UriComponentsBuilder;
 
 @RestController
 @RequestMapping("status")
+@SecurityRequirement(name = "bearer-key")
 public class StatusController {
 
     @Autowired
