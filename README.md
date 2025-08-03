@@ -54,3 +54,4 @@ O projeto oferece uma estrutura CRUD completa para gerenciar usuários, prestado
 - ✅ Implementação do Spring Security para gerenciamento da API: Concluído!
 - ✅ Implementação do Auth0/java-jwt para autenticação de tokens de acesso: Concluído!
 - ✅ Implementação do controle de acesso a rotas: Concluído!
+- ✅ Implementação do JavaDoc para documentação da API: Concluído!
